@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "CreateArticleWithOpenAI";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>OpenAI ile Makale Oluştur</h2>
+    <form method="post" asp-action="CreateArticleWithOpenAI">
+        <div class="mb-3">
+            <label class="form-label">Kategori</label>
+            <select name="categoryId" class="form-select">
+                @foreach (var cat in ViewBag.categories)
+                {
+                    <option value="@cat.CategoryId">@cat.CategoryName</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Prompt</label>
+            <textarea name="prompt" class="form-control" rows="4" placeholder="Makale konusu veya anahtar kelimeler..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-robot me-1"></i> Oluştur ve Kaydet
+        </button>
+        <a asp-action="ArticleList" class="btn btn-secondary ms-2">Listeye Dön</a>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "CreateTestimonialWithGrok";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-5">
+    <h2>Groq AI ile Müşteri Yorumu Ekle</h2>
+    <p class="text-muted">Her tıklamada 1 yeni müşteri yorumu oluşturulup kaydedilir.</p>
+    <form method="post" asp-action="CreateTestimonialWithGrok">
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-robot me-1"></i> Yeni Yorum Ekle
+        </button>
+        <a asp-action="TestimonialList" class="btn btn-secondary ms-2">Listeye Dön</a>
+    </form>
+</div>
