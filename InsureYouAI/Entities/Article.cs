@@ -8,8 +8,10 @@
         public string Content { get => field; set => field = value.Trim(); } = null!;
         public string CoverImageUrl { get => field; set => field = value.Trim(); } = null!;
         public string MainCoverImageUrl { get => field; set => field = value.Trim(); } = null!;
-        public int CategoryId { get => field; set => field = value; }
+        public int CategoryId { get; set; }
         public Category Category { get; set; } = null!;
         public ICollection<Comment> Comments { get; set; } = null!;
+        public string? AppUserId { get; set; }
+        public AppUser AppUser { get; set; } = null!;
     }
 }
