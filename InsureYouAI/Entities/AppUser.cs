@@ -8,10 +8,11 @@ namespace InsureYouAI.Entities
         public string Surname { get => field; set => field = value.Trim(); } = null!;
         public string ImageUrl { get => field; set => field = value.Trim(); } = null!;
         public string Description { get => field; set => field = value.Trim(); } = null!;
-        public string? Education { get => field; set => field = value?.Trim(); } 
-        public string? City { get => field; set => field = value?.Trim(); } 
-        public string? Title { get => field; set => field = value?.Trim(); } 
+        public string Education { get => field; set => field = value.Trim(); } = null!;
+        public string City { get => field; set => field = value.Trim(); } = null!;
+        public string Title { get => field; set => field = value.Trim(); } = null!;
         public ICollection<Comment> Comments { get; set; } = null!;
         public ICollection<Article> Articles { get; set; } = null!;
+        public ICollection<Policy> Policies { get; set; } = null!;
     }
 }
