@@ -20,6 +20,8 @@ namespace InsureYouAI.Controllers
 
         public IActionResult TestimonialList()
         {
+            ViewBag.ControllerName = "Referanslar";
+            ViewBag.PageName = "Referanslar Tarafından Oluşuturulan Yazılar";
             var testimonialList = _context.Testimonials.ToList();
             return View(testimonialList);
         }
@@ -27,6 +29,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult CreateTestimonial()
         {
+            ViewBag.ControllerName = "Referanslar";
+            ViewBag.PageName = "Yeni Referans Yazısı";
             return View();
         }
 
@@ -41,6 +45,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult UpdateTestimonial(int id)
         {
+            ViewBag.ControllerName = "Referanslar";
+            ViewBag.PageName = "Referans Yazısı Güncelleme Sayfası";
             var value = _context.Testimonials.Find(id);
             return View(value);
         }

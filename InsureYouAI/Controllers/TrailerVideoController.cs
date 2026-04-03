@@ -15,12 +15,16 @@ namespace InsureYouAI.Controllers
 
         public IActionResult TrailerVideoList()
         {
+            ViewBag.ControllerName = "Sigorta Tanıtım Videosu";
+            ViewBag.PageName = "Ana Sayfa Sigorta Tanıtım Videosu";
             var trailerVideoList = _context.TrailerVideos.ToList();
             return View(trailerVideoList);
         }
         [HttpGet]
         public IActionResult CreateTrailerVideo()
         {
+            ViewBag.ControllerName = "Sigorta Tanıtım Videosu";
+            ViewBag.PageName = "Yeni Sigorta Tanıtım Videosu Girişi";
             return View();
         }
         [HttpPost]
@@ -33,6 +37,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult UpdateTrailerVideo(int id)
         {
+            ViewBag.ControllerName = "Sigorta Tanıtım Videosu";
+            ViewBag.PageName = "Sigorta Tanıtım Videosu Düzenleme Sayfası";
             var value = _context.TrailerVideos.Find(id);
             return View(value);
         }

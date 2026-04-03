@@ -7,6 +7,8 @@
         public string Subject { get => field; set => field = value.Trim(); } = null!;
         public string Email { get => field; set => field = value.Trim(); } = null!;
         public string MessageDetail { get => field; set => field = value.Trim(); } = null!;
+        public string? AICategory { get => field; set => field = value?.Trim(); }
+        public string? Priority { get => field; set => field = value?.Trim(); }
         public DateTime SendDate { get => field; set => field = value == default ? DateTime.UtcNow : value; }
         public bool IsRead { get => field; set => field = value; }
 

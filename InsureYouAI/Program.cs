@@ -1,10 +1,13 @@
 using InsureYouAI.Context;
 using InsureYouAI.Entities;
 using InsureYouAI.Models;
+using InsureYouAI.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<AIService>();
 
 // Add services to the container.
 builder.Services.AddHttpClient();
@@ -21,7 +24,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<InsureContext>()
     .AddDefaultTokenProviders();
 var app = builder.Build();
-
+app.UseExceptionHandler("/Error/500");
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

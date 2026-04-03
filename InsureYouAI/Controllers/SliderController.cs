@@ -15,12 +15,16 @@ namespace InsureYouAI.Controllers
 
         public IActionResult SliderList()
         {
+            ViewBag.ControllerName = "Slider";
+            ViewBag.PageName = "Ana Sayfa Slider Listesi";
             var sliderList = _context.Sliders.ToList();
             return View(sliderList);
         }
         [HttpGet]
         public IActionResult CreateSlider()
         {
+            ViewBag.ControllerName = "Slider";
+            ViewBag.PageName = "Ana Sayfa Yeni Slider Girişi";
             return View();
         }
         [HttpPost]
@@ -33,6 +37,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult UpdateSlider(int id)
         {
+            ViewBag.ControllerName = "Slider";
+            ViewBag.PageName = "Ana Sayfa Slider Güncelleme İşlemi";
             var value = _context.Sliders.Find(id);
             return View(value);
         }

@@ -20,12 +20,16 @@ namespace InsureYouAI.Controllers
 
         public IActionResult ServiceList()
         {
+            ViewBag.ControllerName = "Hizmelet";
+            ViewBag.PageName = "Mevcut Sigorta Hizmetleri Listesi";
             var serviceList = _context.Services.ToList();
             return View(serviceList);
         }
         [HttpGet]
         public IActionResult CreateService()
         {
+            ViewBag.ControllerName = "Hizmetler";
+            ViewBag.PageName = "Yeni Hizmet Yazısı Girişi";
             return View();
         }
         [HttpPost]
@@ -38,6 +42,8 @@ namespace InsureYouAI.Controllers
         [HttpGet]
         public IActionResult UpdateService(int id)
         {
+            ViewBag.ControllerName = "Hizmetler";
+            ViewBag.PageName = "Hizmet Yazısı Güncelleme Sayfası";
             var value = _context.Services.Find(id);
             return View(value);
         }
